@@ -315,12 +315,11 @@ background-color: grey;">
 
 
 
+<div class="main-content">
 
- <div class="main-content">
+<!-- rgb(247, 144, 107) -->
 
-
-
-  <footer style="padding-bottom:0px; background-color:#3a3a3a;
+    <footer style="padding-bottom:0px; background-color:#3a3a3a;
     color: rgb(8, 8, 8); width:92%; display:block; margin-left:auto; margin-right:auto;" class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -332,7 +331,7 @@ margin-right:0px;"src="card_img.png" alt="">
             </div>
 
             <div class="footer-section">
-                <h4 style="color:white;" class="shadow">Follow Us</h4><br>
+                <h4  style="color: white;" class="shadow">Follow Us</h4><br>
 
 
 
@@ -368,18 +367,24 @@ margin-right:auto; --accent-color: #106bff;" data-social="Facebook" href="https:
 
 
 
+         
+          <!--<div class="footer-image"><br>
+                <img style="width:7rem; height:7rem; 
+display:inline-block;
+margin-left:0px;
+margin-right:0px;"src="dragon_1.jpg" alt="Company Logo">
+</div> -->
             </div>
 
 
 
 
 
-                <h4 style="color:white;" class="shadow">About Us</h4>
-                <p style="color:white;">Experience premium hair care with our nourishing shampoos, oils, masks, and conditioners for your best hair ever.</p>
-            </div>
+                <h4 style="color: white;" class="shadow">About Us</h4>
+                <p style="color: white;">Experience premium hair care with our nourishing shampoos, oils, masks, and conditioners for your best hair ever.</p></div>
     
         <div class="footer-bottom">
-            <p style="color:white;">&copy; 2024 KM. All rights reserved.</p>
+            <p style="color: white;">&copy; 2024 KM. All rights reserved.</p>
         </div>
 </div>
 </div>
@@ -402,6 +407,77 @@ margin-right:auto; --accent-color: #106bff;" data-social="Facebook" href="https:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 
 </body>
 </html>
